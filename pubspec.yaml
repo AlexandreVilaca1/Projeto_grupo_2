@@ -69,6 +69,7 @@ flutter:
     - assets/images/cyclone_freddy_mozambique.png
     - assets/images/syria_earthquake.png
     - assets/images/cyclone_mocha_myanmar.png
+    - assets/images/michael_scott_header.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
