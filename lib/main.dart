@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rise_up2/palette.dart';
-import 'Pages/spalsh_screen.dart';
+import 'Pages/Splash_Screen/spalsh_screen.dart';
 
 void main() => runApp(MyApp());
 

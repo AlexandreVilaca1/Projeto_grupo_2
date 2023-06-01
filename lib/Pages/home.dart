@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-import 'nav_bar.dart';
+import 'Navegation_Bar/nav_bar.dart';
 
 class HomePage extends StatelessWidget {
   @override
