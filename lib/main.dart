@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rise_up2/palette.dart';
-import 'Pages/request_login.dart';
-
+import 'Pages/spalsh_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Palette.pColor,
       ),
-      home:  RequestLogin(),
+      home:  const SplashScreen(),
     );
   }
 }

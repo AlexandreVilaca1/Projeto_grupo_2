@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../models/missions.dart';
+import 'Missions/turkiye_mission_page.dart';
+import 'nav_bar.dart';
 
 class MainScreen extends StatefulWidget {
-  MainScreen({Key? key}) : super(key: key);
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -12,55 +14,59 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   final List<Mission> missions = [
     Mission(
-      title: 'Mission 1',
-      location: 'Space Station 1',
-      date: '2023-06-01',
-      image: 'assets/images/logo.png',
+      title: 'Turkiye earthquake',
+      location: 'Kahramanmaras, Türkiye',
+      date: '2023/02/06',
+      image: 'assets/images/turkiye_earthquake.png',
     ),
     Mission(
-      title: 'Mission 2',
-      location: 'Space Station 2',
-      date: '2023-06-15',
-      image: 'assets/images/logo.png',
+      title: 'Ukraine War',
+      location: 'Ukrayne',
+      date: '2023-02-20',
+      image: 'assets/images/ukraine_war.png',
     ),
     Mission(
-      title: 'Mission 3',
-      location: 'Space Station 2',
-      date: '2023-06-15',
-      image: 'assets/images/logo.png',
+      title: 'Congo floods',
+      location: 'Kalehe, Rominican Republic of Congo',
+      date: '2022-12-16',
+      image: 'assets/images/congo_floods.png',
     ),
     Mission(
-      title: 'Mission 4',
-      location: 'Space Station 2',
-      date: '2023-06-15',
-      image: 'assets/images/logo.png',
+      title: 'Ciclone Freddy',
+      location: 'Mozambique',
+      date: '2023-03-12',
+      image: 'assets/images/cyclone_freddy_mozambique.png',
     ),
     Mission(
-      title: 'Mission 2',
-      location: 'Space Station 2',
-      date: '2023-06-15',
-      image: 'assets/images/logo.png',
+      title: 'Syria earthquake',
+      location: 'Syria',
+      date: '2023-02-06',
+      image: 'assets/images/syria_earthquake.png',
     ),
     Mission(
-      title: 'Mission 2',
-      location: 'Space Station 2',
-      date: '2023-06-15',
-      image: 'assets/images/logo.png',
+      title: 'Cyclone Mocha',
+      location: 'Myanmar',
+      date: '2023-05-14',
+      image: 'assets/images/cyclone_mocha_myanmar.png',
     ),
-    // Add more missions as needed
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const NavBar(),
       appBar: AppBar(
-        backgroundColor:
-            Colors.white, // Set the background color of AppBar to white
+        iconTheme: const IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
         title: const Text(
           'Missions',
           style: TextStyle(
-              color: Colors.black), // Set the text color of AppBar to black
+            color: Colors.black,
+          ),
         ),
-      ),
+        
+        ),
+
       body: ListView.separated(
         itemCount: missions.length,
         separatorBuilder: (BuildContext context, int index) => const Divider(
@@ -68,26 +74,42 @@ class _MainScreenState extends State<MainScreen> {
         ),
         itemBuilder: (BuildContext context, int index) {
           final mission = missions[index];
-          return Container(
-              margin: const EdgeInsets.only(bottom: 10, top: 10),
-              child: Expanded(
-                child: ListTile(
-                  leading: Image.asset(
-                    mission.image,
-                    width: 80,
-                    height: 100,
-                    fit: BoxFit.cover,
-                  ),
-                  title: Text(mission.title),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(mission.location),
-                      Text(mission.date),
-                    ],
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TurkieMissionPage(),
+                ),
+              );
+            },
+            child: Container(
+              margin: const EdgeInsets.only(top: 2),
+              child: ListTile(
+                leading: Image.asset(
+                  mission.image,
+                  width: 70,
+                  height: 80,
+                  fit: BoxFit.cover,
+                ),
+                title: Text(
+                  mission.title,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ));
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(mission.location),
+                    Text(mission.date),
+                  ],
+                ),
+              ),
+            ),
+          );
         },
       ),
     );

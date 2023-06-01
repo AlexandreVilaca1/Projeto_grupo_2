@@ -63,6 +63,13 @@ flutter:
     - assets/images/bone.png
     - assets/images/logo.png
     - assets/images/letra.png
+    - assets/images/turkiye_earthquake.png
+    - assets/images/ukraine_war.png
+    - assets/images/congo_floods.png
+    - assets/images/cyclone_freddy_mozambique.png
+    - assets/images/syria_earthquake.png
+    - assets/images/cyclone_mocha_myanmar.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

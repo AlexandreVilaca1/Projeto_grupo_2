@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       drawer: const NavBar(),
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.blueGrey),
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
         title: const Text(
           'Missions',

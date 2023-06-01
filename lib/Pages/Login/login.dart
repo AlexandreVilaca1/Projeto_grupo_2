@@ -80,9 +80,9 @@ class LoginPage extends StatelessWidget {
               height: 60,
               padding: const EdgeInsets.only(left: 30, right: 30),
               alignment: Alignment.centerLeft,
-              decoration: const BoxDecoration(
+              decoration:  const BoxDecoration(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(12),
+                  Radius.circular(3),
                 ),
               ),
               child: SizedBox.expand(
