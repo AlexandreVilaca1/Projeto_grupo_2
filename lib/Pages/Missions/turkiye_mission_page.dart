@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../palette.dart';
-import '../Authentication/request_login.dart';
+import '../../widgets/ImagesWidget/images.dart';
+import '../../widgets/TextWidgets/description_text.dart';
+import '../../widgets/TextWidgets/mission_title_text.dart';
+import '../../widgets/ButtonsWidgets/segmentedcontrollapp.dart';
+import '../../widgets/TextWidgets/type_donation_title.dart';
 import 'main_page.dart';
 
 class TurkieMissionPage extends StatefulWidget {
@@ -22,66 +25,25 @@ class _TurkieMissionPage extends State<TurkieMissionPage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const MainScreen(),
+                builder: (context) => const MainPage(),
               ),
             );
           },
         ),
         backgroundColor: Colors.white,
         title: const Text(
-          'Missions',
+          'Turkye Mission',
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Column(
+      body: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Image.asset(
-              'assets/images/turkiye_earthquake.png',
-              width: 350,
-              height: 200,
-              fit: BoxFit.fitWidth,
-            ),
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            margin: const EdgeInsets.only(top: 20, left: 25),
-            padding: const EdgeInsets.only(bottom: 60),
-            child: const Text(
-              'Turkiye Earthquake',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.normal,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => RequestLogin(),
-                        ),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-                backgroundColor: Palette.pColor,
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20))),
-            child: const Text(
-              "Donate",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                fontSize: 15,
-                letterSpacing: 2,
-              ),
-            ),
-          ),
+           Images(imagePath: 'assets/images/turkiye_earthquake.png'),
+           MissionTitleText(text: 'Turkiye Mission'),
+           DescriptionText(text: 'On 6th of February in Kahramanmaras, Türkiye, an earthquake measuring  7.8 on Richter scale occurred, the earthquake destroyed 214,000 buildings, killing 46,000 people.'),
+           TypeDonationTitle(text: 'How you would like to donate?'),
+           SegmentedControlApp(),
         ],
       ),
     );

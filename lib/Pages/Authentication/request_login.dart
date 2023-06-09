@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rise_up2/Pages/Navegation_Bar/nav_bar.dart';
 
+import '../../widgets/AppBarWidget/app_bar_nav_bar.dart';
+import '../Navegation_Bar/nav_bar.dart';
 import 'login.dart';
 import 'regist.dart';
 
@@ -9,26 +10,8 @@ class RequestLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar(),
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          color: Colors.black,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => NavBar(),
-              ),
-            );
-          },
-        ),
-        backgroundColor: Colors.white,
-        title: const Text(
-          'Regist',
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
+      drawer: const NavBar(),
+      appBar: const AppBarWidget(text: 'Rise Up'),
       body: Container(
         padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
         color: Colors.white,

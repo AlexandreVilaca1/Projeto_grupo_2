@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:rise_up2/Pages/Authentication/recover_passord.dart';
 import 'package:rise_up2/Pages/Authentication/request_login.dart';
-import 'package:rise_up2/Pages/Authentication/reset_password.dart';
-import '../home.dart';
+import '../Missions/main_page.dart';
 
 // ignore: use_key_in_widget_constructors
 class LoginPage extends StatelessWidget {
@@ -86,7 +86,7 @@ class LoginPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ResetPasswordPage(),
+                      builder: (context) => RecoverPasswordPage(),
                     ),
                   );
                 },
@@ -132,7 +132,7 @@ class LoginPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => MainPage(),
                       ),
                     );
                   },

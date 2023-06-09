@@ -23,14 +23,14 @@ class _EditProfileState extends State<EditProfile> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => MainScreen(),
+                builder: (context) => MainPage(),
               ),
             );
           },
         ),
         backgroundColor: Colors.white,
         title: const Text(
-          'Edit Perfil',
+          'Perfil',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -83,9 +83,9 @@ class _EditProfileState extends State<EditProfile> {
                 ),
               ),
               const SizedBox(height: 80),
-              buildTextField("Full Name", "Michael Scott", false),
-              buildTextField("Email", "michaelscott.com", false),
-              buildTextField("Password", "**********", true),
+              buildTextField("First Name", "Michael", false),
+              buildTextField("Last Name", "Johnson", false),
+              buildTextField("Email", "michaeljhonson@gmail.com", false),
               const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -95,7 +95,7 @@ class _EditProfileState extends State<EditProfile> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => MainScreen(),
+                          builder: (context) => MainPage(),
                         ),
                       );
                     },

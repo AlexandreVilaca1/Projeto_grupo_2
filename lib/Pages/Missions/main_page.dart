@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../../models/missions.dart';
+import '../../widgets/AppBarWidget/app_bar_nav_bar.dart';
 import 'turkiye_mission_page.dart';
 import '../Navegation_Bar/nav_bar.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainPageState extends State<MainPage> {
   final List<Mission> missions = [
     Mission(
       title: 'Turkiye earthquake',
@@ -55,18 +56,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavBar(),
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
-        title: const Text(
-          'Missions',
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-        
-        ),
-
+      appBar: const AppBarWidget(text: 'Missions'),
       body: ListView.separated(
         itemCount: missions.length,
         separatorBuilder: (BuildContext context, int index) => const Divider(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rise_up2/Pages/Missions/main_page.dart';
-
-import 'request_login.dart';
+import 'package:rise_up2/Pages/Authentication/login.dart';
+import 'package:rise_up2/Pages/Authentication/request_login.dart';
 
 class RegistPage extends StatelessWidget {
   @override
@@ -130,7 +129,7 @@ class RegistPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MainScreen(),
+                        builder: (context) => LoginPage(),
                       ),
                     );
                   },
